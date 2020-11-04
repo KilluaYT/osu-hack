@@ -183,13 +183,13 @@ namespace osu_hack
                 checkBox2.Checked = false;
                 checkBox4.Checked = false;
                 checkBox5.Enabled = false;
-                checkBox5.Checked = false;
+                checkBox6.Checked = false;
             }
             else
             {
                 checkBox2.Enabled = true;
                 checkBox4.Enabled = true;
-                checkBox5.Enabled = true;
+                checkBox6.Enabled = true;
             }
         }
 
