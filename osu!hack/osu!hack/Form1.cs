@@ -218,8 +218,8 @@ namespace osu_hack
             {
                 if (textBox1.Text.Contains("osu!"))
                 {
-                    int procID = m.GetProcIdFromName("osu!");
-                    if (procID > 0)
+                    //int procID = m.GetProcIdFromName("osu!");
+                    if (closeGame() == false)
                     {
                         System.Windows.Forms.MessageBox.Show("osu! is running, please close osu! to start the hack.", "Info");
                     }
@@ -262,6 +262,19 @@ namespace osu_hack
             string osuPath;
             osuPath = textBox1.Text;
             Directory.Delete(osuPath, true);
+        }
+        
+        //Find osu process and close it 
+        private bool closeGame(){
+            Process[] processlist = Process.GetProcesses()
+            foreach (Process theprocess in processlist)
+            {
+                if (theprocess.ProcessName.Equals("osu!", StringComparison.CurrentCultureIgnoreCase)) //find (name).exe in the process list (use task manager to find the name)
+                    theprocess.CloseMainWindow();
+                    theprocess.Close();
+                    return true;
+            }
+            return false;
         }
     }
 }
